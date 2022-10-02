@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscogsHttpClient", "DiscogsHttpClient\DiscogsHttpClient.csproj", "{FB22C2E8-F3CB-48D3-99FC-AEB3ACCCE4FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscogsHttpClient.Test", "DiscogsHttpClient.Test\DiscogsHttpClient.Test.csproj", "{4DB5C362-E867-4480-ADEF-5C487333FA22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB22C2E8-F3CB-48D3-99FC-AEB3ACCCE4FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB22C2E8-F3CB-48D3-99FC-AEB3ACCCE4FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB22C2E8-F3CB-48D3-99FC-AEB3ACCCE4FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB22C2E8-F3CB-48D3-99FC-AEB3ACCCE4FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DB5C362-E867-4480-ADEF-5C487333FA22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DB5C362-E867-4480-ADEF-5C487333FA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DB5C362-E867-4480-ADEF-5C487333FA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DB5C362-E867-4480-ADEF-5C487333FA22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {170403B5-F7DF-404D-8D62-E4E2BE3CA4E4}
+	EndGlobalSection
+EndGlobal
