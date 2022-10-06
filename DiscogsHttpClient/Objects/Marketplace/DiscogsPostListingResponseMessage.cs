@@ -1,6 +1,6 @@
 ﻿namespace DiscogsHttpClient.Objects.Marketplace
 {
-    internal class DiscogsPostListingResponseMessage
+    public class DiscogsPostListingResponseMessage
     {
         [JsonProperty("listing_id")]
         public string ListingId { get; set; }

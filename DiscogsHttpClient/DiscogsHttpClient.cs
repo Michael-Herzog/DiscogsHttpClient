@@ -3,6 +3,7 @@ global using DiscogsHttpClient.Messages;
 global using DiscogsHttpClient.Objects;
 global using Newtonsoft.Json;
 using DiscogsHttpClient.Objects.Database;
+using DiscogsHttpClient.Objects.Marketplace;
 using System.Net.Http.Headers;
 using System.Text;
 
@@ -94,6 +95,21 @@ namespace DiscogsHttpClient
             var releaseStats = response.Body<DiscogsReleaseStats>();
 
             return releaseStats;
+        }
+
+        #endregion
+
+        #region Marketplace requests
+
+        public async Task<DiscogsPostListingResponseMessage> PostNewListingRequestAsync(DiscogsPostListingRequestMessage discogsPostListing)
+        {
+            var postNewListingRequest = new PostNewListingRequest(discogsPostListing.ReleaseId.ToString())
+                .WithBody(discogsPostListing);
+
+            var response = await ExecuteRequestAsync(postNewListingRequest);
+            var listingResponse = response.Body<DiscogsPostListingResponseMessage>();
+
+            return listingResponse;
         }
 
         #endregion
