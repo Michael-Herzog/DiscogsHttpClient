@@ -21,11 +21,11 @@ namespace DiscogsHttpClient.Test
                 ReleaseId = 651323,
                 AllowOffers = true,
                 Comments = "",
-                Condition = "Near Mint (NM or M-)",         // TODO: Create & use enum > Implement own JSONConverter
-                SleeveCondition = "Near Mint (NM or M-)",   // TODO: Create & use enum
+                Condition = Condition.NearMint,
+                SleeveCondition = SleeveCondition.NearMint,
                 ExternalId = "PD-1001",
                 Price = 10.0M,
-                Status = "Draft"                            // TODO: Create & use enum
+                Status = Status.Draft
             };
 
             // Authentication as the user is required.

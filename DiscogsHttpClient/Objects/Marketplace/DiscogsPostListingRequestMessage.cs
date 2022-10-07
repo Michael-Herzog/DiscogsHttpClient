@@ -1,4 +1,6 @@
-﻿namespace DiscogsHttpClient.Objects.Marketplace
+﻿using Newtonsoft.Json.Converters;
+
+namespace DiscogsHttpClient.Objects.Marketplace
 {
     /// <summary>
     /// Object to post a marketplace listing.
@@ -22,13 +24,14 @@
         /// The condition of the release you are posting. 
         /// </summary>
         [JsonProperty("condition")]
-        public string Condition { get; set; }
+        public Condition Condition { get; set; }
 
         /// <summary>
         /// The condition of the sleeve of the item you are posting.
         /// </summary>
         [JsonProperty("sleeve_condition")]
-        public string SleeveCondition { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public SleeveCondition SleeveCondition { get; set; }
 
         /// <summary>
         /// The price of the item (in the seller’s currency).
@@ -54,7 +57,7 @@
         /// and Draft (the listing is not ready for public display).
         /// </summary>
         [JsonProperty("status")]
-        public string Status { get; set; }
+        public Status Status { get; set; }
 
         /// <summary>
         /// A freeform field that can be used for the seller’s own reference. 
