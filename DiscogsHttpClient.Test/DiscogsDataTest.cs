@@ -1,4 +1,5 @@
 using DiscogsHttpClient.Extensions;
+using DiscogsHttpClient.Objects.Common;
 using DiscogsHttpClient.Objects.Database;
 
 namespace DiscogsHttpClient.Test
@@ -127,8 +128,23 @@ namespace DiscogsHttpClient.Test
             Assert.IsTrue(artist.Name == "K-OS");
         }
 
+        [TestMethod]
+        public async Task TestGetArtistReleasesRequest()
+        {
+            var client = new DiscogsHttpClient();
+
+            var filter = new DiscogsGetArtistReleasesRequestMessage
+            {
+                SortOrder = DiscogsSortOrder.Ascending
+            };
+
+            var artistReleases = await client.GetArtistReleasesRequestAsync(59792, filter);
+
+            Assert.IsNotNull(artistReleases);
+            Assert.IsTrue(artistReleases.Releases[0].Year == 1962);
+        }
+        
         // TODO...
-        // GetArtistReleases Versions
         // GetLabel
         // GetAllLabelReleases
         // Search

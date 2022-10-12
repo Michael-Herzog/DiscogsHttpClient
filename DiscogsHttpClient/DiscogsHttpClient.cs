@@ -25,15 +25,6 @@ namespace DiscogsHttpClient
         #region Database requests
         // https://www.discogs.com/developers/accessing.html#page:database
 
-        public async Task<DiscogsArtist> GetArtistRequestAsync(int artistId)
-        {
-            var getArtistRequest = new GetArtistRequest(artistId.ToString());
-            var response = await ExecuteRequestAsync(getArtistRequest);
-            var artist = response.Body<DiscogsArtist>();
-
-            return artist;
-        }
-
         public async Task<DiscogsRelease> GetReleaseRequestAsync(int releaseId)
         {
             var getReleaseRequest = new GetReleaseRequest(releaseId.ToString());
@@ -113,6 +104,24 @@ namespace DiscogsHttpClient
             var masterReleaseVersions = response.Body<DiscogsMasterReleaseVersions>();
 
             return masterReleaseVersions;
+        }
+
+        public async Task<DiscogsArtist> GetArtistRequestAsync(int artistId)
+        {
+            var getArtistRequest = new GetArtistRequest(artistId.ToString());
+            var response = await ExecuteRequestAsync(getArtistRequest);
+            var artist = response.Body<DiscogsArtist>();
+
+            return artist;
+        }
+
+        public async Task<DiscogsArtistReleases> GetArtistReleasesRequestAsync(int artistId, DiscogsGetArtistReleasesRequestMessage? filter = null)
+        {
+            var getArtistReleasesRequest = new GetArtistReleasesRequest(artistId.ToString(), filter);
+            var response = await ExecuteRequestAsync(getArtistReleasesRequest);
+            var artistReleases = response.Body<DiscogsArtistReleases>();
+
+            return artistReleases;
         }
 
         #endregion

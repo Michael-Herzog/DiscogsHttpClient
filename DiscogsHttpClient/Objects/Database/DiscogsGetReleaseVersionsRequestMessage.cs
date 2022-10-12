@@ -1,4 +1,5 @@
 ﻿using DiscogsHttpClient.Objects.Common;
+using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 
 namespace DiscogsHttpClient.Objects.Database
@@ -29,14 +30,16 @@ namespace DiscogsHttpClient.Objects.Database
         [JsonProperty("country", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Country { get; set; }
 
-        [JsonProperty("sort", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public RelaesesSort SortBy { get; set; }
+        [JsonProperty("sort")]
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ReleasesSort SortBy { get; set; }
 
-        [JsonProperty("sort_order", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [JsonProperty("sort_order")]
+        [JsonConverter(typeof(StringEnumConverter))]
         public DiscogsSortOrder SortOrder { get; set; }
     }
 
-    public enum RelaesesSort
+    public enum ReleasesSort
     {
         [EnumMember(Value = "released")]
         Released,
