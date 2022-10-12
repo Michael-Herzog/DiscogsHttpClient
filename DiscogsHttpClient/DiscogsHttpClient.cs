@@ -124,6 +124,15 @@ namespace DiscogsHttpClient
             return artistReleases;
         }
 
+        public async Task<DiscogsLabel> GetLabelRequestAsync(int labelId)
+        {
+            var getLabelRequest = new GetLabelRequest(labelId.ToString());
+            var response = await ExecuteRequestAsync(getLabelRequest);
+            var label = response.Body<DiscogsLabel>();
+
+            return label;
+        }
+
         #endregion
 
         #region Marketplace requests

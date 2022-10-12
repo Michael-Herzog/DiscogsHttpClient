@@ -143,7 +143,18 @@ namespace DiscogsHttpClient.Test
             Assert.IsNotNull(artistReleases);
             Assert.IsTrue(artistReleases.Releases[0].Year == 1962);
         }
+
+        [TestMethod]
+        public async Task TestGetLabelRequest()
+        {
+            var client = new DiscogsHttpClient();
+            var label = await client.GetLabelRequestAsync(751);
+
+            Assert.IsNotNull(label);
+            Assert.IsTrue(label.Name == "Salsoul Records");
+        }
         
+
         // TODO...
         // GetLabel
         // GetAllLabelReleases
