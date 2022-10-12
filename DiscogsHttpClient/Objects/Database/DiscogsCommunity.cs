@@ -2,8 +2,8 @@
 {
     public class DiscogsCommunity : DiscogsCommunityInfo
     {
-        [JsonProperty("Contributors")]
-        public DiscogsUser[] contributors { get; set; }
+        [JsonProperty("contributors")]
+        public DiscogsUser[] Contributors { get; set; }
 
         [JsonProperty("data_quality")]
         public string DataQuality { get; set; }

@@ -82,6 +82,17 @@ namespace DiscogsHttpClient.Test
 
         // TODO...
         // GetMasterRelease
+        [TestMethod]
+        public async Task TestGetMasterReleaseRequest()
+        {
+            var client = new DiscogsHttpClient();
+            var masterRelease = await client.GetMasterReleaseRequestAsync(175562);
+
+            Assert.IsNotNull(masterRelease);
+            Assert.IsTrue(masterRelease.Title == "Joyful Rebellion");
+            Assert.IsTrue(masterRelease.Artists[0].Name == "K-OS");
+        }
+
         // GetMasterRelease Versions
 
         [TestMethod]
