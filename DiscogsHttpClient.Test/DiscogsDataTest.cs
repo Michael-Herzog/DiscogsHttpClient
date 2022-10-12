@@ -1,4 +1,5 @@
 using DiscogsHttpClient.Extensions;
+using DiscogsHttpClient.Objects.Database;
 
 namespace DiscogsHttpClient.Test
 {
@@ -80,8 +81,6 @@ namespace DiscogsHttpClient.Test
             //Assert.IsTrue(releaseStats.Have > 4);
         }
 
-        // TODO...
-        // GetMasterRelease
         [TestMethod]
         public async Task TestGetMasterReleaseRequest()
         {
@@ -93,8 +92,31 @@ namespace DiscogsHttpClient.Test
             Assert.IsTrue(masterRelease.Artists[0].Name == "K-OS");
         }
 
-        // GetMasterRelease Versions
+        [TestMethod]
+        public async Task TestGetMasterReleaseVersionsRequest()
+        {
+            var client = new DiscogsHttpClient();
+            var masterReleaseVersions = await client.GetMasterReleaseVersionsRequestAsync(175562);
 
+            Assert.IsNotNull(masterReleaseVersions);
+            Assert.IsTrue(masterReleaseVersions.Versions[0].Title == "Joyful Rebellion");
+        }
+
+        [TestMethod]
+        public async Task TestGetMasterReleaseVersionsRequestWithFilter()
+        {
+            var client = new DiscogsHttpClient();
+
+            var filter = new DiscogsGetReleaseVersionsRequestMessage { 
+                Country = "Japan",
+            };
+
+            var masterReleaseVersions = await client.GetMasterReleaseVersionsRequestAsync(8883, filter);
+
+            Assert.IsNotNull(masterReleaseVersions);
+            Assert.IsTrue(masterReleaseVersions.Versions[0].Title == "Thriller");
+        }
+        
         [TestMethod]
         public async Task TestGetArtistRequest()
         {

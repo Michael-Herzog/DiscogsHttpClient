@@ -106,6 +106,15 @@ namespace DiscogsHttpClient
             return masterRelease;
         }
 
+        public async Task<DiscogsMasterReleaseVersions> GetMasterReleaseVersionsRequestAsync(int masterId, DiscogsGetReleaseVersionsRequestMessage? filter = null)
+        {
+            var getMasterReleaseVersionsRequest = new GetMasterReleaseVersionsRequest(masterId.ToString(), filter);
+            var response = await ExecuteRequestAsync(getMasterReleaseVersionsRequest);
+            var masterReleaseVersions = response.Body<DiscogsMasterReleaseVersions>();
+
+            return masterReleaseVersions;
+        }
+
         #endregion
 
         #region Marketplace requests
