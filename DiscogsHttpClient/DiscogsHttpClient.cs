@@ -2,6 +2,7 @@
 global using DiscogsHttpClient.Messages;
 global using DiscogsHttpClient.Objects;
 global using Newtonsoft.Json;
+using DiscogsHttpClient.Objects.Common;
 using DiscogsHttpClient.Objects.Database;
 using DiscogsHttpClient.Objects.Marketplace;
 using System.Net.Http.Headers;
@@ -131,6 +132,15 @@ namespace DiscogsHttpClient
             var label = response.Body<DiscogsLabel>();
 
             return label;
+        }
+
+        public async Task<DiscogsLabelReleases> GetLabelReleasesAsync(int labelId, DiscogsPaginationRequest? filter = null)
+        {
+            var getLabelReleasesRequest = new GetLabelReleasesRequest(labelId.ToString(), filter);
+            var response = await ExecuteRequestAsync(getLabelReleasesRequest);
+            var labelReleases = response.Body<DiscogsLabelReleases>();
+
+            return labelReleases;
         }
 
         #endregion

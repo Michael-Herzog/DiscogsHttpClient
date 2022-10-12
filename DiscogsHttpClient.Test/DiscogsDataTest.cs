@@ -153,11 +153,18 @@ namespace DiscogsHttpClient.Test
             Assert.IsNotNull(label);
             Assert.IsTrue(label.Name == "Salsoul Records");
         }
-        
+
+        [TestMethod]
+        public async Task TestGetLabelReleasesRequest()
+        {
+            var client = new DiscogsHttpClient();
+            var labelReleases = await client.GetLabelReleasesAsync(751);
+
+            Assert.IsNotNull(labelReleases);
+            Assert.IsTrue(labelReleases.Releases[0].Title == "Rap-O Clap-O");
+        }
 
         // TODO...
-        // GetLabel
-        // GetAllLabelReleases
         // Search
     }
 }
