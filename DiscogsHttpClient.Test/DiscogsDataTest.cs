@@ -14,7 +14,7 @@ namespace DiscogsHttpClient.Test
         public async Task TestGetReleaseRequest()
         {
             var client = new DiscogsHttpClient();
-            var release = await client.GetReleaseRequestAsync(1707667);
+            var release = await client.GetReleaseAsync(1707667);
 
             Assert.IsNotNull(release);
             Assert.IsTrue(release.Title == "Born Like This");
@@ -25,7 +25,7 @@ namespace DiscogsHttpClient.Test
         public async Task TestGetReleaseRequestAsync()
         {
             var client = new DiscogsHttpClient();
-            var releaseRating = await client.GetReleaseRatingRequestAsync(9107382, "bigbankhank");
+            var releaseRating = await client.GetReleaseRatingAsync(9107382, "bigbankhank");
 
             Assert.IsNotNull(releaseRating);
             Assert.IsTrue(releaseRating.UserName == "bigbankhank");
@@ -42,7 +42,7 @@ namespace DiscogsHttpClient.Test
 
             // Authentication as the user is required.
             var client = new DiscogsHttpClient(Token);
-            var releaseRating = await client.DeleteReleaseRatingRequestAsync(9107382, "bigbankhank");
+            var releaseRating = await client.DeleteReleaseRatingAsync(9107382, "bigbankhank");
 
             Assert.IsNull(releaseRating);
         }
@@ -51,7 +51,7 @@ namespace DiscogsHttpClient.Test
         public async Task TestPutReleaseRequestAsync()
         {
             var client = new DiscogsHttpClient(Token);
-            var releaseRating = await client.PutReleaseRatingRequestAsync(9107382, "bigbankhank", 5);
+            var releaseRating = await client.PutReleaseRatingAsync(9107382, "bigbankhank", 5);
 
             Assert.IsNotNull(releaseRating);
             Assert.IsTrue(releaseRating.UserName == "bigbankhank");
@@ -62,7 +62,7 @@ namespace DiscogsHttpClient.Test
         public async Task TestGetCommunityReleaseRequestAsync()
         {
             var client = new DiscogsHttpClient();
-            var releaseRating = await client.GetCommunityReleaseRatingRequestAsync(9107382);
+            var releaseRating = await client.GetCommunityReleaseRatingAsync(9107382);
 
             Assert.IsNotNull(releaseRating);
             Assert.IsTrue(releaseRating.Rating.Average > 4);
@@ -72,7 +72,7 @@ namespace DiscogsHttpClient.Test
         public async Task TestGetReleaseStatsRequestAsync()
         {
             var client = new DiscogsHttpClient();
-            var releaseStats = await client.GetReleaseStatsRequestAsync(9107382);
+            var releaseStats = await client.GetReleaseStatsAsync(9107382);
 
             Assert.IsNotNull(releaseStats);
 
@@ -86,7 +86,7 @@ namespace DiscogsHttpClient.Test
         public async Task TestGetMasterReleaseRequest()
         {
             var client = new DiscogsHttpClient();
-            var masterRelease = await client.GetMasterReleaseRequestAsync(175562);
+            var masterRelease = await client.GetMasterReleaseAsync(175562);
 
             Assert.IsNotNull(masterRelease);
             Assert.IsTrue(masterRelease.Title == "Joyful Rebellion");
@@ -97,7 +97,7 @@ namespace DiscogsHttpClient.Test
         public async Task TestGetMasterReleaseVersionsRequest()
         {
             var client = new DiscogsHttpClient();
-            var masterReleaseVersions = await client.GetMasterReleaseVersionsRequestAsync(175562);
+            var masterReleaseVersions = await client.GetMasterReleaseVersionsAsync(175562);
 
             Assert.IsNotNull(masterReleaseVersions);
             Assert.IsTrue(masterReleaseVersions.Versions[0].Title == "Joyful Rebellion");
@@ -112,7 +112,7 @@ namespace DiscogsHttpClient.Test
                 Country = "Japan",
             };
 
-            var masterReleaseVersions = await client.GetMasterReleaseVersionsRequestAsync(8883, filter);
+            var masterReleaseVersions = await client.GetMasterReleaseVersionsAsync(8883, filter);
 
             Assert.IsNotNull(masterReleaseVersions);
             Assert.IsTrue(masterReleaseVersions.Versions[0].Title == "Thriller");
@@ -122,7 +122,7 @@ namespace DiscogsHttpClient.Test
         public async Task TestGetArtistRequest()
         {
             var client = new DiscogsHttpClient();
-            var artist = await client.GetArtistRequestAsync(109799);
+            var artist = await client.GetArtistAsync(109799);
 
             Assert.IsNotNull(artist);
             Assert.IsTrue(artist.Name == "K-OS");
@@ -138,7 +138,7 @@ namespace DiscogsHttpClient.Test
                 SortOrder = DiscogsSortOrder.Ascending
             };
 
-            var artistReleases = await client.GetArtistReleasesRequestAsync(59792, filter);
+            var artistReleases = await client.GetArtistReleasesAsync(59792, filter);
 
             Assert.IsNotNull(artistReleases);
             Assert.IsTrue(artistReleases.Releases[0].Year == 1962);
@@ -148,7 +148,7 @@ namespace DiscogsHttpClient.Test
         public async Task TestGetLabelRequest()
         {
             var client = new DiscogsHttpClient();
-            var label = await client.GetLabelRequestAsync(751);
+            var label = await client.GetLabelAsync(751);
 
             Assert.IsNotNull(label);
             Assert.IsTrue(label.Name == "Salsoul Records");

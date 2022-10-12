@@ -25,7 +25,7 @@ namespace DiscogsHttpClient
         #region Database requests
         // https://www.discogs.com/developers/accessing.html#page:database
 
-        public async Task<DiscogsRelease> GetReleaseRequestAsync(int releaseId)
+        public async Task<DiscogsRelease> GetReleaseAsync(int releaseId)
         {
             var getReleaseRequest = new GetReleaseRequest(releaseId.ToString());
             var response = await ExecuteRequestAsync(getReleaseRequest);
@@ -34,7 +34,7 @@ namespace DiscogsHttpClient
             return release;
         }
 
-        public async Task<DiscogsReleaseRating> GetReleaseRatingRequestAsync(int releaseId, string userName)
+        public async Task<DiscogsReleaseRating> GetReleaseRatingAsync(int releaseId, string userName)
         {
             var getReleaseRatingRequest = new GetReleaseRatingRequest(releaseId.ToString(), userName);
             var response = await ExecuteRequestAsync(getReleaseRatingRequest);
@@ -43,7 +43,7 @@ namespace DiscogsHttpClient
             return releaseRating;
         }
 
-        public async Task<DiscogsReleaseRating> DeleteReleaseRatingRequestAsync(int releaseId, string userName)
+        public async Task<DiscogsReleaseRating> DeleteReleaseRatingAsync(int releaseId, string userName)
         {
             var deleteReleaseRatingRequest = new DeleteReleaseRatingRequest(releaseId.ToString(), userName);
             var response = await ExecuteRequestAsync(deleteReleaseRatingRequest);
@@ -52,7 +52,7 @@ namespace DiscogsHttpClient
             return releaseRating;
         }
 
-        public async Task<DiscogsReleaseRating> PutReleaseRatingRequestAsync(int releaseId, string userName, int rating)
+        public async Task<DiscogsReleaseRating> PutReleaseRatingAsync(int releaseId, string userName, int rating)
         {
             var discogsReleaseRating = new DiscogsReleaseRating
             {
@@ -70,7 +70,7 @@ namespace DiscogsHttpClient
             return releaseRating;
         }
 
-        public async Task<DiscogsCommunityReleaseRating> GetCommunityReleaseRatingRequestAsync(int releaseId)
+        public async Task<DiscogsCommunityReleaseRating> GetCommunityReleaseRatingAsync(int releaseId)
         {
             var getCommunityReleaseRatingRequest = new GetCommunityReleaseRatingRequest(releaseId.ToString());
             var response = await ExecuteRequestAsync(getCommunityReleaseRatingRequest);
@@ -79,7 +79,7 @@ namespace DiscogsHttpClient
             return communityReleaseRating;
         }
 
-        public async Task<DiscogsReleaseStats> GetReleaseStatsRequestAsync(int releaseId)
+        public async Task<DiscogsReleaseStats> GetReleaseStatsAsync(int releaseId)
         {
             var getReleaseStatsRequest = new GetReleaseStatsRequest(releaseId.ToString());
             var response = await ExecuteRequestAsync(getReleaseStatsRequest);
@@ -88,7 +88,7 @@ namespace DiscogsHttpClient
             return releaseStats;
         }
 
-        public async Task<DiscogsMasterRelease> GetMasterReleaseRequestAsync(int masterId)
+        public async Task<DiscogsMasterRelease> GetMasterReleaseAsync(int masterId)
         {
             var getMasterReleaseRequest = new GetMasterReleaseRequest(masterId.ToString());
             var response = await ExecuteRequestAsync(getMasterReleaseRequest);
@@ -97,7 +97,7 @@ namespace DiscogsHttpClient
             return masterRelease;
         }
 
-        public async Task<DiscogsMasterReleaseVersions> GetMasterReleaseVersionsRequestAsync(int masterId, DiscogsGetReleaseVersionsRequestMessage? filter = null)
+        public async Task<DiscogsMasterReleaseVersions> GetMasterReleaseVersionsAsync(int masterId, DiscogsGetReleaseVersionsRequestMessage? filter = null)
         {
             var getMasterReleaseVersionsRequest = new GetMasterReleaseVersionsRequest(masterId.ToString(), filter);
             var response = await ExecuteRequestAsync(getMasterReleaseVersionsRequest);
@@ -106,7 +106,7 @@ namespace DiscogsHttpClient
             return masterReleaseVersions;
         }
 
-        public async Task<DiscogsArtist> GetArtistRequestAsync(int artistId)
+        public async Task<DiscogsArtist> GetArtistAsync(int artistId)
         {
             var getArtistRequest = new GetArtistRequest(artistId.ToString());
             var response = await ExecuteRequestAsync(getArtistRequest);
@@ -115,7 +115,7 @@ namespace DiscogsHttpClient
             return artist;
         }
 
-        public async Task<DiscogsArtistReleases> GetArtistReleasesRequestAsync(int artistId, DiscogsGetArtistReleasesRequestMessage? filter = null)
+        public async Task<DiscogsArtistReleases> GetArtistReleasesAsync(int artistId, DiscogsGetArtistReleasesRequestMessage? filter = null)
         {
             var getArtistReleasesRequest = new GetArtistReleasesRequest(artistId.ToString(), filter);
             var response = await ExecuteRequestAsync(getArtistReleasesRequest);
@@ -124,7 +124,7 @@ namespace DiscogsHttpClient
             return artistReleases;
         }
 
-        public async Task<DiscogsLabel> GetLabelRequestAsync(int labelId)
+        public async Task<DiscogsLabel> GetLabelAsync(int labelId)
         {
             var getLabelRequest = new GetLabelRequest(labelId.ToString());
             var response = await ExecuteRequestAsync(getLabelRequest);
@@ -137,7 +137,7 @@ namespace DiscogsHttpClient
 
         #region Marketplace requests
 
-        public async Task<DiscogsPostListingResponseMessage> PostNewListingRequestAsync(DiscogsPostListingRequestMessage discogsPostListing)
+        public async Task<DiscogsPostListingResponseMessage> PostNewListingAsync(DiscogsPostListingRequestMessage discogsPostListing)
         {
             var postNewListingRequest = new PostNewListingRequest(discogsPostListing.ReleaseId.ToString())
                 .WithBody(discogsPostListing);

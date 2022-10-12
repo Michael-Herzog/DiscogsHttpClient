@@ -30,7 +30,7 @@ namespace DiscogsHttpClient.Test
 
             // Authentication as the user is required.
             var client = new DiscogsHttpClient(Token);
-            var releaseRating = await client.PostNewListingRequestAsync(listing);
+            var releaseRating = await client.PostNewListingAsync(listing);
 
             Assert.IsNotNull(releaseRating);
         }
