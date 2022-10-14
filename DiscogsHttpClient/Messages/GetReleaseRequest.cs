@@ -13,7 +13,7 @@ namespace DiscogsHttpClient.Messages
         {
             try
             {
-                Path = Path.FormatInvariant(Uri.EscapeDataString(releaseId), currencyCode.HasValue() ? $"?{currencyCode}" : string.Empty);
+                Path = Path.FormatInvariant(Uri.EscapeDataString(releaseId), currencyCode.HasValue() ? $"?curr_abbr={currencyCode}" : string.Empty);
             }
             catch (IOException)
             {

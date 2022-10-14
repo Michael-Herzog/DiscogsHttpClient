@@ -6,7 +6,16 @@ namespace DiscogsHttpClient.Test
     [TestClass]
     public class DiscogsMarketplaceTest
     {
-        const string Token = "";
+        const string Token = "btCsJtxdcgbNmGVvDTEgLGcGXQkgGWXvtMYgYOwi";
+
+        [TestMethod]
+        public async Task TestGetListingRequest()
+        {
+            var client = new DiscogsHttpClient();
+            var listing = await client.GetListingAsync(2129539472);
+
+            Assert.IsNotNull(listing);
+        }
 
         [TestMethod]
         public async Task TestPostNewListingRequestAsync()

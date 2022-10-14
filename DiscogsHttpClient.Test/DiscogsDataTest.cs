@@ -8,7 +8,7 @@ namespace DiscogsHttpClient.Test
     public class DiscogsDataTest
     {
         // Token is required for some action as delete or put user release rating
-        const string Token = "";
+        const string Token = "btCsJtxdcgbNmGVvDTEgLGcGXQkgGWXvtMYgYOwi";
 
         [TestMethod]
         public async Task TestGetReleaseRequest()

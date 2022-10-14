@@ -147,6 +147,15 @@ namespace DiscogsHttpClient
 
         #region Marketplace requests
 
+        public async Task<DiscogsListing> GetListingAsync(int listingId)
+        {
+            var getListingRequest = new GetListingRequest(listingId.ToString());
+            var response = await ExecuteRequestAsync(getListingRequest);
+            var listing = response.Body<DiscogsListing>();
+
+            return listing;
+        }
+
         public async Task<DiscogsPostListingResponseMessage> PostNewListingAsync(DiscogsPostListingRequestMessage discogsPostListing)
         {
             var postNewListingRequest = new PostNewListingRequest(discogsPostListing.ReleaseId.ToString())

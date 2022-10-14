@@ -9,7 +9,7 @@
         public DiscogsPrice Price { get; set; }
 
         [JsonProperty("original_price")]
-        public OriginalPrice OriginalPrice { get; set; }
+        public DiscogsOriginalPrice OriginalPrice { get; set; }
 
         [JsonProperty("allow_offers")]
         public bool AllowOffers { get; set; }
@@ -33,28 +33,22 @@
         [JsonProperty("comments")]
         public string Comments { get; set; }
 
-        // TODO ...
-    }
+        [JsonProperty("seller")]
+        public DiscogsSeller Seller { get; set; }
 
-    // TODO make own files
-    public class DiscogsPrice
-    {
-        [JsonProperty("currency")]
-        public string Currency { get; set; }
+        [JsonProperty("shipping_price")]
+        public DiscogsPrice ShippingPrice { get; set; }
 
-        [JsonProperty("value")]
-        public decimal Value { get; set; }
-    }
+        [JsonProperty("original_shipping_price")]
+        public DiscogsOriginalPrice OriginalShippingPrice { get; set; }
 
-    public class OriginalPrice
-    {
-        [JsonProperty("curr_abbr")]
-        public string Currency { get; set; }
+        [JsonProperty("release")]
+        public DiscogsReleaseDescription Release { get; set; }
 
-        [JsonProperty("curr_id")]
-        public int CurrencyId { get; set; }
+        [JsonProperty("resource_url")]
+        public string ResourceUrl { get; set; }
 
-        [JsonProperty("value")]
-        public decimal Value { get; set; }
+        [JsonProperty("audio")]
+        public bool Audio { get; set; }
     }
 }
