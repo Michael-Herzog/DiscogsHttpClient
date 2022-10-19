@@ -6,7 +6,7 @@ namespace DiscogsHttpClient.Test
     [TestClass]
     public class DiscogsMarketplaceTest
     {
-        const string Token = "btCsJtxdcgbNmGVvDTEgLGcGXQkgGWXvtMYgYOwi";
+        const string Token = "";
 
         [TestMethod]
         public async Task TestGetListingRequest()
@@ -43,5 +43,16 @@ namespace DiscogsHttpClient.Test
 
             Assert.IsNotNull(releaseRating);
         }
+
+        [TestMethod]
+        public async Task TestDeleteListingRequest()
+        {
+            var client = new DiscogsHttpClient(Token);
+            var response = await client.DeleteListingAsync(2175253472);
+
+            Assert.IsTrue(response);
+        }
+
+        
     }
 }

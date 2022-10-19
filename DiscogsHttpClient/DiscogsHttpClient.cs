@@ -5,6 +5,7 @@ global using Newtonsoft.Json;
 using DiscogsHttpClient.Objects.Common;
 using DiscogsHttpClient.Objects.Database;
 using DiscogsHttpClient.Objects.Marketplace;
+using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
 
@@ -154,6 +155,14 @@ namespace DiscogsHttpClient
             var listing = response.Body<DiscogsListing>();
 
             return listing;
+        }
+
+        public async Task<bool> DeleteListingAsync(long listingId)
+        {
+            var deleteListingRequest = new DeleteListingRequest(listingId.ToString());
+            var response = await ExecuteRequestAsync(deleteListingRequest);
+            
+            return response.Status == HttpStatusCode.OK;
         }
 
         public async Task<DiscogsPostListingResponseMessage> PostNewListingAsync(DiscogsPostListingRequestMessage discogsPostListing)
