@@ -8,5 +8,6 @@ namespace DiscogsHttpClient.Objects.Marketplace
 {
     internal class DiscogsShipping
     {
+
     }
 }

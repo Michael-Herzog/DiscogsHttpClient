@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DiscogsHttpClient.Objects.Marketplace
+﻿namespace DiscogsHttpClient.Objects.Marketplace
 {
-    internal class DiscogsOrderItem
+    public class DiscogsOrderItem : DiscogsEntity
     {
+        [JsonProperty("release")]
+        public DiscogsOrderItemRelease Release { get; set; }
+
+        [JsonProperty("price")]
+        public DiscogsPrice Price { get; set; }
+
+        [JsonProperty("media_condition")]
+        public string MediaCondition { get; set; }
+
+        [JsonProperty("sleeve_condition")]
+        public string SleeveCondition { get; set; }
+    }
+
+    public class DiscogsOrderItemRelease : DiscogsEntity
+    {
+        [JsonProperty("description")]
+        public string Description { get; set; }
     }
 }

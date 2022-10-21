@@ -1,10 +1,12 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel;
+using System.Runtime.Serialization;
 
 namespace DiscogsHttpClient.Objects.Marketplace
 {
     public enum Condition
     {
         [EnumMember(Value = "Mint (M)")]
+        [Description("Mint (M)")]
         Mint,
 
         [EnumMember(Value = "Near Mint (NM or M-)")]

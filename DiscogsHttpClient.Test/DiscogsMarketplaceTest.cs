@@ -30,7 +30,7 @@ namespace DiscogsHttpClient.Test
                 ReleaseId = 651323,
                 AllowOffers = true,
                 Comments = "",
-                Condition = Condition.NearMint,
+                Condition =  Condition.NearMint,
                 SleeveCondition = SleeveCondition.NearMint,
                 ExternalId = "PD-1001",
                 Price = 10.0M,
@@ -48,11 +48,18 @@ namespace DiscogsHttpClient.Test
         public async Task TestDeleteListingRequest()
         {
             var client = new DiscogsHttpClient(Token);
-            var response = await client.DeleteListingAsync(2175253472);
+            var response = await client.DeleteListingAsync(837276714);
 
             Assert.IsTrue(response);
         }
 
-        
+        [TestMethod]
+        public async Task TestGetOrderRequest()
+        {
+            var client = new DiscogsHttpClient(Token);
+            var order = await client.GetOrderAsync("302490-336");
+
+            Assert.IsNotNull(order);
+        }
     }
 }

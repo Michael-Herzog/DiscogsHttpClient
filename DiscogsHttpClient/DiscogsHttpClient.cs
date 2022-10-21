@@ -162,7 +162,7 @@ namespace DiscogsHttpClient
             var deleteListingRequest = new DeleteListingRequest(listingId.ToString());
             var response = await ExecuteRequestAsync(deleteListingRequest);
             
-            return response.Status == HttpStatusCode.OK;
+            return response.Status == HttpStatusCode.NoContent;
         }
 
         public async Task<DiscogsPostListingResponseMessage> PostNewListingAsync(DiscogsPostListingRequestMessage discogsPostListing)
@@ -174,6 +174,15 @@ namespace DiscogsHttpClient
             var listingResponse = response.Body<DiscogsPostListingResponseMessage>();
 
             return listingResponse;
+        }
+
+        public async Task<DiscogsOrder> GetOrderAsync(string orderId)
+        {
+            var getOrderRequest = new GetOrderRequest(orderId);
+            var response = await ExecuteRequestAsync(getOrderRequest);
+            var order = response.Body<DiscogsOrder>();
+
+            return order;
         }
 
         #endregion
