@@ -1,4 +1,6 @@
 ﻿using DiscogsHttpClient.Extensions;
+using DiscogsHttpClient.Objects.Common;
+using DiscogsHttpClient.Objects.Database;
 using DiscogsHttpClient.Objects.Marketplace;
 
 namespace DiscogsHttpClient.Test
@@ -60,6 +62,21 @@ namespace DiscogsHttpClient.Test
             var order = await client.GetOrderAsync("302490-336");
 
             Assert.IsNotNull(order);
+        }
+
+        [TestMethod]
+        public async Task TestGetOrdersRequest()
+        {
+            var client = new DiscogsHttpClient(Token);
+
+            var filter = new DiscogsGetOrdersRequestMessage
+            {
+                SortOrder = DiscogsSortOrder.Ascending
+            };
+
+            var orders = await client.GetOrdersAsync(filter);
+
+            Assert.IsNotNull(orders);
         }
     }
 }

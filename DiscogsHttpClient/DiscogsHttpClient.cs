@@ -185,6 +185,15 @@ namespace DiscogsHttpClient
             return order;
         }
 
+        public async Task<DiscogsOrders> GetOrdersAsync(DiscogsGetOrdersRequestMessage? filter = null)
+        {
+            var getOrdersRequest = new GetOrdersRequest(filter);
+            var response = await ExecuteRequestAsync(getOrdersRequest);
+            var orders = response.Body<DiscogsOrders>();
+
+            return orders;
+        }
+
         #endregion
 
         #region Infrastructure

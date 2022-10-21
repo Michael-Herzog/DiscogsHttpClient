@@ -1,7 +1,10 @@
 ﻿namespace DiscogsHttpClient.Objects.Marketplace
 {
-    public class DiscogsOrderItem : DiscogsEntity
+    public class DiscogsOrderItem
     {
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
         [JsonProperty("release")]
         public DiscogsOrderItemRelease Release { get; set; }
 

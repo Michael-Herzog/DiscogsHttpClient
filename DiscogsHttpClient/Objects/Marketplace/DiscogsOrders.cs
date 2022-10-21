@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DiscogsHttpClient.Objects.Common;
 
 namespace DiscogsHttpClient.Objects.Marketplace
 {
-    internal class DiscogsOrders
+    public class DiscogsOrders
     {
+        [JsonProperty("orders")]
+        public DiscogsOrderItem[] Release { get; set; }
+
+        [JsonProperty("pagination")]
+        public DiscogsPagination Pagination { get; set; }
     }
 }
