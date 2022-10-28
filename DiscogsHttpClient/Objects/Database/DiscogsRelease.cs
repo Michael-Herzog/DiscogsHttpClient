@@ -27,7 +27,7 @@
         public string ArtistsSort { get; set; }
 
         [JsonProperty("catno")]
-        public string CatNo { get; set; }
+        public string CatalogNumber { get; set; }
 
         [JsonProperty("country")]
         public string Country { get; set; }

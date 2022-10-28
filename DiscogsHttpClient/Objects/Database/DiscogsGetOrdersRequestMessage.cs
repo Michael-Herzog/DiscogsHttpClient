@@ -17,19 +17,19 @@ namespace DiscogsHttpClient.Objects.Database
         /// Only show orders created after this time.
         /// </summary>
         [JsonProperty("created_after", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string created_after { get; set; }
+        public string CreatedAfter { get; set; }
 
         /// <summary>
         /// Only show orders created before this time.
         /// </summary>
         [JsonProperty("created_before", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string created_before { get; set; }
+        public string CreatedBefore { get; set; }
 
         /// <summary>
         /// The country to filter (Example: Belgium)
         /// </summary>
         [JsonProperty("archived", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool archived { get; set; }
+        public bool Archived { get; set; }
 
         [JsonProperty("sort")]
         [JsonConverter(typeof(StringEnumConverter))]
