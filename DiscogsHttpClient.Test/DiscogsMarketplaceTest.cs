@@ -2,13 +2,30 @@
 using DiscogsHttpClient.Objects.Common;
 using DiscogsHttpClient.Objects.Database;
 using DiscogsHttpClient.Objects.Marketplace;
+using Microsoft.Extensions.Configuration;
 
 namespace DiscogsHttpClient.Test
 {
     [TestClass]
     public class DiscogsMarketplaceTest
     {
-        const string Token = "";
+        private string Token = "";
+
+        public static IConfiguration InitConfiguration()
+        {
+            var config = new ConfigurationBuilder()
+               .AddJsonFile("appsettings.json")
+               .Build();
+
+            return config;
+        }
+
+        [TestInitialize]
+        public void Setup()
+        {
+            var config = InitConfiguration();
+            Token = config["Token"];
+        }
 
         [TestMethod]
         public async Task TestGetListingRequest()

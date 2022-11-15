@@ -1,6 +1,7 @@
 using DiscogsHttpClient.Extensions;
 using DiscogsHttpClient.Objects.Common;
 using DiscogsHttpClient.Objects.Database;
+using Microsoft.Extensions.Configuration;
 
 namespace DiscogsHttpClient.Test
 {
@@ -8,7 +9,23 @@ namespace DiscogsHttpClient.Test
     public class DiscogsDataTest
     {
         // Token is required for some action as delete or put user release rating
-        const string Token = "";
+        private string Token = "";
+
+        public static IConfiguration InitConfiguration()
+        {
+            var config = new ConfigurationBuilder()
+               .AddJsonFile("appsettings.json")
+               .Build();
+
+            return config;
+        }
+
+        [TestInitialize]
+        public void Setup()
+        {
+            var config = InitConfiguration();
+            Token = config["Token"];
+        }
 
         [TestMethod]
         public async Task TestGetReleaseRequest()
