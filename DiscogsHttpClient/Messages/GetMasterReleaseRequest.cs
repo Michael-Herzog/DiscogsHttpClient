@@ -1,6 +1,6 @@
-﻿using DiscogsHttpClient.Objects.Database;
+﻿using Discogs.Objects.Database;
 
-namespace DiscogsHttpClient.Messages
+namespace Discogs.Messages
 {
     /// <summary>
     /// The Master resource represents a set of similar Releases. 

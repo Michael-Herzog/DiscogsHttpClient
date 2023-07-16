@@ -1,8 +1,8 @@
-﻿using DiscogsHttpClient.Objects.Database;
+﻿using Discogs.Objects.Database;
 using Newtonsoft.Json.Linq;
 using System.Web;
 
-namespace DiscogsHttpClient.Messages
+namespace Discogs.Messages
 {
     /// <summary>
     /// Retrieves a list of all Releases that are versions of this master. 

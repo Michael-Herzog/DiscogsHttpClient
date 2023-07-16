@@ -1,4 +1,4 @@
-﻿namespace DiscogsHttpClient.Messages
+﻿namespace Discogs.Messages
 {
     /// <summary>
     /// Deletes a discogs user rating for a release. Doesn't return anything.

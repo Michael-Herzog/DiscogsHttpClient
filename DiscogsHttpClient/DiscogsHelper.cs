@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Reflection;
 using System.Web;
 
-namespace DiscogsHttpClient
+namespace Discogs
 {
     static public class DiscogsHelper
     {

@@ -1,8 +1,8 @@
-﻿using DiscogsHttpClient.Objects.Common;
+﻿using Discogs.Objects.Common;
 using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 
-namespace DiscogsHttpClient.Objects.Database
+namespace Discogs.Objects.Database
 {
     /// <summary>
     /// https://www.discogs.com/developers/accessing.html#page:database,header:database-search-get

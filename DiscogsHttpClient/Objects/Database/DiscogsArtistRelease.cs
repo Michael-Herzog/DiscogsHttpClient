@@ -1,4 +1,4 @@
-﻿namespace DiscogsHttpClient.Objects.Database
+﻿namespace Discogs.Objects.Database
 {
     public class DiscogsArtistRelease
     {

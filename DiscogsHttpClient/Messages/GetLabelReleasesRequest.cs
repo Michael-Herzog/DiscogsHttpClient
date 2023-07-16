@@ -1,7 +1,7 @@
-﻿using DiscogsHttpClient.Objects.Common;
-using DiscogsHttpClient.Objects.Database;
+﻿using Discogs.Objects.Common;
+using Discogs.Objects.Database;
 
-namespace DiscogsHttpClient.Messages
+namespace Discogs.Messages
 {
     /// <summary>
     /// Returns a list of Releases associated with the label. 

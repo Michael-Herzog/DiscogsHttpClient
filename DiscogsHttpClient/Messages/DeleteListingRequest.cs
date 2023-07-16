@@ -1,4 +1,4 @@
-﻿namespace DiscogsHttpClient.Messages
+﻿namespace Discogs.Messages
 {
     /// <summary>
     /// Permanently remove a listing from the Marketplace.

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Converters;
 
-namespace DiscogsHttpClient.Objects.Marketplace
+namespace Discogs.Objects.Marketplace
 {
     /// <summary>
     /// Object to post a marketplace listing.

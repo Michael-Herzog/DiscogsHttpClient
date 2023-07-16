@@ -1,6 +1,6 @@
-﻿using DiscogsHttpClient.Objects.Common;
+﻿using Discogs.Objects.Common;
 
-namespace DiscogsHttpClient.Objects.Marketplace
+namespace Discogs.Objects.Marketplace
 {
     public class DiscogsOrders
     {

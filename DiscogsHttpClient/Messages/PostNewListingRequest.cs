@@ -1,6 +1,6 @@
-﻿using DiscogsHttpClient.Objects.Marketplace;
+﻿using Discogs.Objects.Marketplace;
 
-namespace DiscogsHttpClient.Messages
+namespace Discogs.Messages
 {
     /// <summary>
     /// Create a Marketplace listing. 

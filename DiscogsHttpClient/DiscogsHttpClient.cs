@@ -1,15 +1,15 @@
-﻿global using DiscogsHttpClient.Extensions;
-global using DiscogsHttpClient.Messages;
-global using DiscogsHttpClient.Objects;
+﻿global using Discogs.Extensions;
+global using Discogs.Messages;
+global using Discogs.Objects;
 global using Newtonsoft.Json;
-using DiscogsHttpClient.Objects.Common;
-using DiscogsHttpClient.Objects.Database;
-using DiscogsHttpClient.Objects.Marketplace;
+using Discogs.Objects.Common;
+using Discogs.Objects.Database;
+using Discogs.Objects.Marketplace;
 using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace DiscogsHttpClient
+namespace Discogs
 {
     public class DiscogsHttpClient
     {

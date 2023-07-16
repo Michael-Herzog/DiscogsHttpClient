@@ -1,6 +1,6 @@
-﻿using DiscogsHttpClient.Objects.Database;
+﻿using Discogs.Objects.Database;
 
-namespace DiscogsHttpClient.Messages
+namespace Discogs.Messages
 {
     /// <summary>
     /// The Community Release Rating endpoint retrieves the average rating and the total number of user ratings for a given release.

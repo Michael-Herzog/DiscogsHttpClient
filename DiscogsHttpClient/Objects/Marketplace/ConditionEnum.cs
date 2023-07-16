@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.Serialization;
 
-namespace DiscogsHttpClient.Objects.Marketplace
+namespace Discogs.Objects.Marketplace
 {
     public enum Condition
     {

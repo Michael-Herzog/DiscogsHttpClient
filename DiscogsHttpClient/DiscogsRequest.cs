@@ -1,4 +1,4 @@
-﻿namespace DiscogsHttpClient
+﻿namespace Discogs
 {
     public class DiscogsRequest<TMessage> : DiscogsRequest
     {

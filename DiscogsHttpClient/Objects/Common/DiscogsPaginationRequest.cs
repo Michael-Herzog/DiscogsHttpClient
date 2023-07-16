@@ -1,4 +1,4 @@
-﻿namespace DiscogsHttpClient.Objects.Common
+﻿namespace Discogs.Objects.Common
 {
     public class DiscogsPaginationRequest
     {

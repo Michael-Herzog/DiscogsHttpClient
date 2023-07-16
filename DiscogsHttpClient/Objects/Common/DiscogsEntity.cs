@@ -1,4 +1,4 @@
-﻿namespace DiscogsHttpClient.Messages
+﻿namespace Discogs.Messages
 {
     public abstract class DiscogsEntity
     {

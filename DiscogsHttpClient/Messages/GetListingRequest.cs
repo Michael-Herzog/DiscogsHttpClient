@@ -1,7 +1,7 @@
-﻿using DiscogsHttpClient.Objects.Database;
-using DiscogsHttpClient.Objects.Marketplace;
+﻿using Discogs.Objects.Database;
+using Discogs.Objects.Marketplace;
 
-namespace DiscogsHttpClient.Messages
+namespace Discogs.Messages
 {
     /// <summary>
     /// The Listing resource allows you to view Marketplace listings.

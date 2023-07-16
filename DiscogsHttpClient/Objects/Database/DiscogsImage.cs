@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Converters;
 
-namespace DiscogsHttpClient.Objects.Database
+namespace Discogs.Objects.Database
 {
     public class DiscogsImage
     {

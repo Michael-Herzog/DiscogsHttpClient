@@ -1,6 +1,6 @@
-﻿using DiscogsHttpClient.Objects.Common;
+﻿using Discogs.Objects.Common;
 
-namespace DiscogsHttpClient.Objects.Database
+namespace Discogs.Objects.Database
 {
     public class DiscogsMasterReleaseVersions
     {

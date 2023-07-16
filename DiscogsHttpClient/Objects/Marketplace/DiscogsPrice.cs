@@ -1,4 +1,4 @@
-﻿namespace DiscogsHttpClient.Objects.Marketplace
+﻿namespace Discogs.Objects.Marketplace
 {
     public class DiscogsPrice
     {

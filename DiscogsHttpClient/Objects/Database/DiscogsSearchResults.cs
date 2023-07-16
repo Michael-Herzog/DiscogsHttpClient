@@ -1,7 +1,7 @@
-﻿using DiscogsHttpClient.Objects.Common;
-using DiscogsHttpClient.Objects.Database;
+﻿using Discogs.Objects.Common;
+using Discogs.Objects.Database;
 
-namespace DiscogsHttpClient.Objects.Marketplace
+namespace Discogs.Objects.Marketplace
 {
     public class DiscogsSearchResults
     {

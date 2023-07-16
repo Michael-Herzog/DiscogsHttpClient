@@ -1,6 +1,6 @@
-﻿using DiscogsHttpClient.Objects.Database;
+﻿using Discogs.Objects.Database;
 
-namespace DiscogsHttpClient.Messages
+namespace Discogs.Messages
 {
     /// <summary>
     /// The Label resource represents a label, company, recording studio, location, or other entity involved with Artists and Releases. 

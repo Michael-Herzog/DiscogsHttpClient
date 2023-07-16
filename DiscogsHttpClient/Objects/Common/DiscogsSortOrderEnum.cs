@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace DiscogsHttpClient.Objects.Common
+namespace Discogs.Objects.Common
 {
     public enum DiscogsSortOrder
     {

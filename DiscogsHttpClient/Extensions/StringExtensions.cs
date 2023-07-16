@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
-namespace DiscogsHttpClient.Extensions
+namespace Discogs.Extensions
 {
     public static partial class StringExtensions
     {

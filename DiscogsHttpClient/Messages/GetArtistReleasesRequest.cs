@@ -1,6 +1,6 @@
-﻿using DiscogsHttpClient.Objects.Database;
+﻿using Discogs.Objects.Database;
 
-namespace DiscogsHttpClient.Messages
+namespace Discogs.Messages
 {
     /// <summary>
     /// Get an artist’s releases
