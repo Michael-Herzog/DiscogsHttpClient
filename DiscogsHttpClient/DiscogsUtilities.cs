@@ -1,11 +1,10 @@
-﻿using Newtonsoft.Json.Linq;
-using System.ComponentModel;
-using System.Reflection;
+﻿using System.ComponentModel;
 using System.Web;
+using Newtonsoft.Json.Linq;
 
 namespace Discogs
 {
-    static public class DiscogsHelper
+    static public class DiscogsUtilities
     {
         public static string ConvertObjectToQuery(object filter)
         {
@@ -25,9 +24,8 @@ namespace Discogs
 
         public static string GetEnumDescription(Enum value)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
-
-            DescriptionAttribute[] attributes = fi.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
+            var fi = value.GetType().GetField(value.ToString());
+            var attributes = fi.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
 
             if (attributes != null && attributes.Any())
             {

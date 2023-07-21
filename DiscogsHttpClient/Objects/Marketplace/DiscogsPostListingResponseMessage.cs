@@ -3,8 +3,7 @@
     public class DiscogsPostListingResponseMessage
     {
         [JsonProperty("listing_id")]
-        public string ListingId { get; set; }
-
+        public long ListingId { get; set; }
 
         [JsonProperty("resource_url")]
         public string ResourceUrl { get; set; }

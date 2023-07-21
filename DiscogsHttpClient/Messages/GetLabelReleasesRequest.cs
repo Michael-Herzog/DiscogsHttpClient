@@ -14,7 +14,7 @@ namespace Discogs.Messages
         {
             try
             {
-                var query = DiscogsHelper.ConvertObjectToQuery(filter);
+                var query = DiscogsUtilities.ConvertObjectToQuery(filter);
 
                 Path = Path.FormatInvariant(Uri.EscapeDataString(labelId), query);
             }

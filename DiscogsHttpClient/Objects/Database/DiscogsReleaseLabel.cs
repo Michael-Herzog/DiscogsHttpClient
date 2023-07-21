@@ -12,7 +12,7 @@
         public string EntityTypeName { get; set; }
 
         [JsonProperty("name")]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [JsonProperty("resource_url")]
         public string ResourceUrl { get; set; }
