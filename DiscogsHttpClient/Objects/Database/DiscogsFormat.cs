@@ -6,10 +6,10 @@
         public string[] Descriptions { get; set; }
 
         [JsonProperty("name")]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [JsonProperty("qty")]
-        public string Quantity { get; set; }
+        public int Quantity { get; set; }
 
         [JsonProperty("text")]
         public string Text { get; set; }

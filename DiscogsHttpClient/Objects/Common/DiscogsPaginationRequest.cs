@@ -8,7 +8,7 @@
         public int? page { get; set; } = 1;
 
         /// <summary>
-        ///  The number of item per page.
+        ///  The number of items per page.
         /// </summary>
         public int? per_page { get; set; } = 25;
     }
